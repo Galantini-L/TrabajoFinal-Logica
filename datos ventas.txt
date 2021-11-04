@@ -1,0 +1,10 @@
+- Código de propiedad
+- Nombre de la localidad donde se encuentra la propiedad
+- Tipo de propiedad (Casa o Depto)
+- Dirección de la propiedad.
+- Descripción de la misma
+- E (si es nueva) o U (si es una casa no nueva)
+- V ( si esta en venta) o A ( si es para alquilar)
+- Precio de venta o alquiler.
+
+[837884, "Posadas", "Departamento", "Felix de Azara 1848", "La unidad se encuentra en el piso sexto teniendo una vista plena del centro de la ciudad y la plaza 9 de julio. Cuenta con un dormitorio en suite con placard, cocina living comedor integrado, barra divisoria, anafe eléctrico, horno eléctrico y termo-tanque eléctrico, lavadero aparte y un baño social completo, ventanas de aluminio y doble vidrio", "E", "V", 16000000],
