@@ -31,7 +31,7 @@ const enAlquiler=[];
 function venta(propiedades) {
     for (let i = 0; i < propiedades.length; i++) {
         if (propiedades[i][6]=="V") {
-            enVenta.push(propiedades[i][6]);
+            enVenta.push(propiedades[i]);
         }
     }
 }
@@ -39,14 +39,21 @@ function venta(propiedades) {
 function alquiler(propiedades) {
     for (let i = 0; i < propiedades.length; i++) {
         if (propiedades[i][6]=="A") {
-            enAlquiler.push(propiedades[i][6]);
+            enAlquiler.push(propiedades[i]);
         }
     }
 }
+
+enAlquiler.sort();
+document.write(enAlquiler);
+
+
+
 
 venta(propiedades);
 alquiler(propiedades);
 
 console.log(propiedades);
+console.log(propiedades.sort());
 console.log(enVenta);
 console.log(enAlquiler);
