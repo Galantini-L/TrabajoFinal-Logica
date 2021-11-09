@@ -1,0 +1,26 @@
+body{
+    background:rgb(165, 170, 170);
+}
+.inputpropiedades{
+    display: flex;
+    flex-direction: column;
+    margin: 3pc 3pc;
+    
+}
+.inputpropiedades .labelregistro{
+    text-align: center;
+    font-size: 2.5pc;
+    margin-bottom: 1pc;
+}
+.container{
+    display: flex;
+    margin: 2pc auto;
+}
+.condicion-estado{
+    display: flex;
+
+}
+.input-group-appen{
+    display: flex;
+    margin: 1pc 1pc 1pc 0;
+}
