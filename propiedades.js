@@ -64,4 +64,4 @@ alquiler(propiedades);
 //console.log(propiedades);
 //console.log(propiedades.sort());
 //document.write(enVenta,"<br>");
-document.write(enAlquiler);
+//document.write(enAlquiler);

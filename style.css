@@ -1,26 +1,43 @@
 body{
-    background:rgb(165, 170, 170);
+    background:rgb(250, 250, 250);
 }
+
 .inputpropiedades{
+    font-family: 'Open sans', sans-serif;
     display: flex;
     flex-direction: column;
-    margin: 3pc 3pc;
-    
+    margin: 2pc 2pc;
+    background-color: rgb(201, 201, 201);
+    border-radius: 2pc;
+    padding: 1pc;
 }
+
 .inputpropiedades .labelregistro{
+    font-family: 'Bahnschrift';
     text-align: center;
     font-size: 2.5pc;
     margin-bottom: 1pc;
 }
+
+.input-group-text{
+    border-radius: 9px;
+}
+
 .container{
     display: flex;
     margin: 2pc auto;
 }
+
 .condicion-estado{
     display: flex;
-
 }
+
 .input-group-appen{
     display: flex;
     margin: 1pc 1pc 1pc 0;
+}
+
+.btn-outline-light{
+    color: rgb(33, 37, 41);
+    background-color: rgb(233, 236, 239);
 }
