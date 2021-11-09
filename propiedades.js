@@ -1,4 +1,4 @@
-const propiedades=[
+var propiedades=[
     [837884, "Posadas", "Departamento", "Felix de Azara 1848", "La unidad se encuentra en el piso sexto teniendo una vista plena del centro de la ciudad y la plaza 9 de julio. Cuenta con un dormitorio en suite con placard, cocina living comedor integrado, barra divisoria, anafe eléctrico, horno eléctrico y termo-tanque eléctrico, lavadero aparte y un baño social completo, ventanas de aluminio y doble vidrio", "E", "V", 16000000],
     [877737, "Posadas", "Casa", "Zona ruta 213 y Jesús Nazareno Posadas", "Se alquila casa a estrenar de dos dormitorios , sin placares, Termotanque eléctrico , lavadero , garaje y luz conectada . Se aceptan niños y mascotas.", "E", "A", 28000],
     [792993, "Posadas", "Casa", "Av. Rademacher 4083", "Living comedor, cocina comedor, dos dormitorios grandes, más la posibilidad de cerrar un tercero dentro de los m2 construidos (ya previsto), garage, lavadero, patio trasero y jardín de frente con galería. 2 baños, uno en suite enorme que se puede subdividir sí es el caso.", "U", "V", 28000000],
@@ -25,16 +25,20 @@ const propiedades=[
     [550626, "Posadas", "Casa", "Barrio Palomar", "Cuenta con 3 dormitorios con placares, cocina con amoblamientos de bajo mesada y alacena. quincho, parrilla, patio .cochera, terraza, un buen espacio que de preferencia podría ser utilizado para pileta.", "U", "V", 34000000],
     [311881, "Posadas", "Casa", "San Luis 1646", "250 mts construidos, cuenta con cocina totalmente amoblada con bajomesada y alacena, living con chimenea, comedor de amplias dimensiones con salida al patio, en la planta alta se encuentran 2 dormitorios con placares y balcón , dos baños, uno de ellos con jacussi y otro dormitorio con salida a la terraza, habitacion de servicio con baño privado, lavadero cubierto, todos los ambientes con AA, * Patio con quincho con parrilla y pileta, en la propiedad cuenta con un grupo electrogeno.", "U", "V", 170000000],
 ];
-const enVenta=[];
-const enAlquiler=[];
+var enVenta=[];
+var enAlquiler=[];
 
+
+// funcion agrega los alquileres disponibles y los ordena
 function venta(propiedades) {
     for (let i = 0; i < propiedades.length; i++) {
         if (propiedades[i][6]=="V") {
-            enVenta.push(propiedades[i]);
+            enVenta.push(propiedades[i][0]);
         }
     }
 }
+
+// funcion agrega los alquileres disponibles y los ordena
 
 function alquiler(propiedades) {
     for (let i = 0; i < propiedades.length; i++) {
@@ -42,18 +46,22 @@ function alquiler(propiedades) {
             enAlquiler.push(propiedades[i]);
         }
     }
+
+    // filtro
+    enAlquiler.sort(function(a,b){
+        return a[0] - b[0];
+    })
 }
 
-enAlquiler.sort();
-document.write(enAlquiler);
-
+//enAlquiler.sort();
+//document.write(enAlquiler);
 
 
 
 venta(propiedades);
 alquiler(propiedades);
 
-console.log(propiedades);
-console.log(propiedades.sort());
-console.log(enVenta);
-console.log(enAlquiler);
+//console.log(propiedades);
+//console.log(propiedades.sort());
+//document.write(enVenta,"<br>");
+document.write(enAlquiler);
