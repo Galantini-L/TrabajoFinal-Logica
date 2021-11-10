@@ -6,104 +6,129 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 
-    <title>Document</title>
+
+    <title>La casa de tus sueños</title>
 </head>
 <body>
 
     <!-- INPUT GROUP -->
-<div class="inputpropiedades">
-      <label class="labelregistro">REGISTRO DE PROPIEDADES</label>
-      <div class="input-group mb-3">
-          <span class="input-group-text" id="basic-addon1">Localidad</span>
-          <input type="text" class="form-control" placeholder="Nombre de la localidad donde se encuentra la propiedad" aria-label="Username" aria-describedby="basic-addon1">
-        </div>
-
-        <div class="input-group mb-3">
-          <label class="input-group-text" for="inputGroupSelect01">Tipo</label>
-          <select class="form-select" id="inputGroupSelect01">
-            <option selected disabled>Elegir</option>
-            <option value="1">Casa</option>
-            <option value="2">Departamento</option>
-          </select>
-        </div>
-  
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="direccion">Direccion</span>
-          <input type="text" class="form-control" placeholder="Calle y numeración" aria-label="Recipient's username" aria-describedby="basic-addon2">
-        </div>
-  
-        <div class="condicion-estado">
+  <div class="inputpropiedadesTotal">
+    <div class="inputpropiedades">
+          <label class="labelregistro">REGISTRO DE PROPIEDADES</label>
           <div class="input-group mb-3">
-            <label class="input-group-text" for="inputGroupSelect01">Condición</label>
-            <select class="form-select" id="inputGroupSelect01">
-              <option selected disabled>Elegir</option>
-              <option value="1">Estrenar</option>
-              <option value="2">Usado</option>
-            </select>
-          </div>
+              <span class="input-group-text" id="basic-addon1">Localidad</span>
+              <input type="text" class="form-control" placeholder="Nombre de la localidad donde se encuentra la propiedad" aria-label="Username" aria-describedby="basic-addon1" id="localidad">
+            </div>
 
-          <div class="input-group mb-3">
-            <label class="input-group-text" for="inputGroupSelect01">Estado</label>
-            <select class="form-select" id="inputGroupSelect01">
-              <option selected disabled>Elegir</option>
-              <option value="1">Alquilar</option>
-              <option value="2">Vender</option>
-            </select>
-          </div>
-          
-        </div>
-  
-        <div class="input-group mb-3">
-          <span class="input-group-text">Precio</span>
-          <input type="text" class="form-control" placeholder="Precio de la propiedad (sin signos ni puntos)" aria-label="Amount (to the nearest dollar)">
-        </div>
-  
-        <div class="input-group">
-          <span class="input-group-text">Descripción</span>
-          <textarea class="form-control" aria-label="With textarea"></textarea>
-        </div>
-        <div class="input-group-appen">
-          <button type="button" class="btn btn-outline-light">Agregar</button>
-        </div>
-</div>
+            <div class="input-group mb-3">
+              <label class="input-group-text" for="inputGroupSelect01">Tipo</label>
+              <select class="form-select" id="tipo">
+                <option selected disabled>Elegir</option>
+                <option value="Casa">Casa</option>
+                <option value="Departamento">Departamento</option>
+              </select>
+            </div>
+      
+            <div class="input-group mb-3">
+              <span class="input-group-text">Direccion</span>
+              <input type="text" class="form-control" placeholder="Calle y numeración" aria-label="Recipient's username" aria-describedby="basic-addon2" id="direccion">
+            </div>
+      
+            <div class="condicion-estado">
+              <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01">Condición</label>
+                <select class="form-select" id="condicion">
+                  <option selected disabled>Elegir</option>
+                  <option value="E">Estrenar</option>
+                  <option value="U">Usado</option>
+                </select>
+              </div>
 
-    <!-- TABLA PARA LISTAR TODAS LAS PROPIDEDADES -->
-    <div class= "container">
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">Code</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Localidad</th>
-                <th scope="col">Tipo</th>
-                <th scope="col">Dirección</th>
-                <th scope="col">Descripción</th>
-                <th scope="col">Estado</th>
-                <th scope="col">Condición</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-            </tr>
-            </tbody>
-        </table>
+              <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01">Estado</label>
+                <select class="form-select" id="estado">
+                  <option selected disabled>Elegir</option>
+                  <option value="A">Alquilar</option>
+                  <option value="V">Vender</option>
+                </select>
+              </div>
+              
+            </div>
+      
+            <div class="input-group mb-3">
+              <span class="input-group-text">Precio</span>
+              <input type="text" class="form-control" placeholder="Precio de la propiedad (sin signos ni puntos)" aria-label="Amount (to the nearest dollar)" id="pesos">
+            </div>
+      
+            <div class="input-group">
+              <span class="input-group-text">Descripción</span>
+              <textarea class="form-control" aria-label="With textarea" id="descripcion"></textarea>
+            </div>
+            <div class="input-group-appen">
+              <button type="button" class="btn btn-outline-light" id="btnAgregar">Agregar</button>
+            </div>
+            <div class="input-group-deleat">
+              <div class="label">
+              <label>Borrar Propiedad</label>
+            </div>
+              <button type="button" class="btn btn-outline-light" id= "btnMostrar">Borrar</button>
+              <input type="text" aria-label="code" placeholder="Introduzca el código de la propiedad" class="form-control">
+            </div>
+            
     </div>
+
+        <!-- TABLA PARA LISTAR TODAS LAS PROPIDEDADES -->
+        <div class= "container">
+          <div class="sort">
+            <button type="button" class="btn btn-outline-light" id= "btnMostrar">Mostrar</button>
+            <select class="form-select" id="inputGroupSelect01">
+              <option selected disabled>Mostrar las propiedades:</option>
+              <option value="1">Alquiler</option>
+              <option value="2">Venta</option>
+              <option value="3">Estrenar</option>
+              <option value="4">Usada</option>
+              <option value="4">Todas</option>
+            </select>
+          </div>
+          <div>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Localidad</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Dirección</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Condición</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+    </div>
+  </div>
 
     <!-- TABLA PARA LISTAR LAS PROPIDEDADES EN ALQUILER -->
 
