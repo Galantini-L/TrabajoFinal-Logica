@@ -1,4 +1,4 @@
-var propiedades=[
+let propiedades=[
     [837884, "Posadas", "Departamento", "Felix de Azara 1848", "La unidad se encuentra en el piso sexto teniendo una vista plena del centro de la ciudad y la plaza 9 de julio. Cuenta con un dormitorio en suite con placard, cocina living comedor integrado, barra divisoria, anafe eléctrico, horno eléctrico y termo-tanque eléctrico, lavadero aparte y un baño social completo, ventanas de aluminio y doble vidrio", "E", "V", 16000000],
     [877737, "Posadas", "Casa", "Zona ruta 213 y Jesús Nazareno Posadas", "Se alquila casa a estrenar de dos dormitorios , sin placares, Termotanque eléctrico , lavadero , garaje y luz conectada . Se aceptan niños y mascotas.", "E", "A", 28000],
     [792993, "Posadas", "Casa", "Av. Rademacher 4083", "Living comedor, cocina comedor, dos dormitorios grandes, más la posibilidad de cerrar un tercero dentro de los m2 construidos (ya previsto), garage, lavadero, patio trasero y jardín de frente con galería. 2 baños, uno en suite enorme que se puede subdividir sí es el caso.", "U", "V", 28000000],
@@ -23,45 +23,111 @@ var propiedades=[
     [717370, "Posadas", "Casa", "Av. Francisco de Haro 2867", "3 dormitorios con placares. 2 baños completos. Living - Cocina - Comedor amoblada. Cochera cubierta para un auto. Pequeño patio con piscina.", "U", "V", 26780000],
     [701185, "Posadas", "Casa", "Pedro Mendez 2258", "2 habitaciones. Baño. Living comedor diario. Lavadero cubierto.", "U", "V", 14400000],
     [550626, "Posadas", "Casa", "Barrio Palomar", "Cuenta con 3 dormitorios con placares, cocina con amoblamientos de bajo mesada y alacena. quincho, parrilla, patio .cochera, terraza, un buen espacio que de preferencia podría ser utilizado para pileta.", "U", "V", 34000000],
-    [311881, "Posadas", "Casa", "San Luis 1646", "250 mts construidos, cuenta con cocina totalmente amoblada con bajomesada y alacena, living con chimenea, comedor de amplias dimensiones con salida al patio, en la planta alta se encuentran 2 dormitorios con placares y balcón , dos baños, uno de ellos con jacussi y otro dormitorio con salida a la terraza, habitacion de servicio con baño privado, lavadero cubierto, todos los ambientes con AA, * Patio con quincho con parrilla y pileta, en la propiedad cuenta con un grupo electrogeno.", "U", "V", 170000000],
+    [11881, "Posadas", "Casa", "San Luis 1646", "250 mts construidos, cuenta con cocina totalmente amoblada con bajomesada y alacena, living con chimenea, comedor de amplias dimensiones con salida al patio, en la planta alta se encuentran 2 dormitorios con placares y balcón , dos baños, uno de ellos con jacussi y otro dormitorio con salida a la terraza, habitacion de servicio con baño privado, lavadero cubierto, todos los ambientes con AA, * Patio con quincho con parrilla y pileta, en la propiedad cuenta con un grupo electrogeno.", "U", "V", 170000000],
 ];
-var enVenta=[];
-var enAlquiler=[];
+let enVenta=[];
+let enAlquiler=[];
 
 
-// funcion agrega los alquileres disponibles y los ordena
-function venta(propiedades) {
-    for (let i = 0; i < propiedades.length; i++) {
-        if (propiedades[i][6]=="V") {
-            enVenta.push(propiedades[i][0]);
+
+// FUNCION DE FILTRO REUTILIZABLE
+function filtrarPor(array,e,cond){
+    let arrayTemp = new Array();
+    
+    array.forEach(function (element,i){
+
+        if(array[i][e]==cond){
+            arrayTemp.push(array[i]);
+        }
+    });
+    
+    return (arrayTemp);
+    
+}
+
+// FUNCION ORDENAR METODO BURBUJA
+
+function burbuja(array){
+    let aux,n;
+    n = array.length;
+
+    for(let k=1;k<n;k++){
+        for(let i=0;i<(n-k);i++){
+            if(array[i][0]>array[i+1][0]){
+                aux = array[i];
+                array[i] = array[i+1];
+                array[i+1] = aux;
+            }
         }
     }
 }
 
-// funcion agrega los alquileres disponibles y los ordena
+// FUNCION AGREGA LAS VENTAS Y LOS ORDENA POR BURBUJA
+function venta() {
 
+    enVenta = filtrarPor(propiedades,6,"V");
+    burbuja(enVenta);
+    console.log(enVenta);
+}
+
+
+
+// FUNCION AGREGA LOS ALQUILERES Y ORDENA POR METODO SORT
 function alquiler(propiedades) {
     for (let i = 0; i < propiedades.length; i++) {
         if (propiedades[i][6]=="A") {
             enAlquiler.push(propiedades[i]);
         }
     }
+    // FILTRO
 
-    // filtro
     enAlquiler.sort(function(a,b){
         return a[0] - b[0];
     })
+    console.log(enAlquiler);
 }
-
-//enAlquiler.sort();
-//document.write(enAlquiler);
-
-
-
-venta(propiedades);
 alquiler(propiedades);
 
-//console.log(propiedades);
-//console.log(propiedades.sort());
-//document.write(enVenta,"<br>");
-document.write(enAlquiler);
+//BOTONES Y TABLAS
+
+btnAgregar = document.getElementById("btnAgregar");
+btnMostrar = document.getElementById("btnMostrar");
+let propiedadesAgregadas = [];
+
+eventos();
+function eventos(){
+
+    btnAgregar.addEventListener("click",agregar);
+}
+
+function agregar(){
+
+    const localidad = document.getElementById("localidad").value;
+    const tipo = document.getElementById("tipo");
+    const tipoUser = tipo.value;
+    const direccion = document.getElementById("direccion").value;
+    const descripcion = document.getElementById("descripcion").value;
+    const condicion = document.getElementById("condicion");
+    const condUser = condicion.value;
+    const estado = document.getElementById("estado");
+    const estUser = estado.value;
+    const precio = document.getElementById("pesos").value;
+
+    propiedadesAgregadas.push(String(localidad));
+    propiedadesAgregadas.push(String(tipoUser));
+    propiedadesAgregadas.push(String(direccion));
+    propiedadesAgregadas.push(String(descripcion));
+    propiedadesAgregadas.push(String(condUser));
+    propiedadesAgregadas.push(String(estUser));
+    propiedadesAgregadas.push(Number(precio));
+    console.log(propiedadesAgregadas);
+}
+
+
+    function borrarSegunCodigo(propiedades, row) {
+        propiedades = propiedades.slice(0); // make copy
+        propiedades.splice(row - 1, 1);
+        return propiedades;
+     }
+     
+     console.log(deleteRow(propiedades, /numero de la fila empezando por 1/));

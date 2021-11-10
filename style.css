@@ -14,7 +14,11 @@ body{
 }
 .container{
     display: flex;
-    margin: 2pc auto;
+    flex-direction: column;
+}
+.container .sort{
+    display: flex;
+    margin: 1pc 1pc 1pc 1pc;
 }
 .condicion-estado{
     display: flex;
@@ -23,4 +27,13 @@ body{
 .input-group-appen{
     display: flex;
     margin: 1pc 1pc 1pc 0;
+}
+.inputpropiedadesTotal{
+    margin: 10%;
+    background: linear-gradient(to right bottom, rgba(255,255,255,0.4), rgba(255,255,255,0.2));
+    border-radius: 2.3rem;
+    backdrop-filter: blur(2rem);
+}
+.input-group-deleat{
+    display: flex;
 }
